@@ -10,11 +10,12 @@
     ?>
 <div class="containerproduit">
     <img src="FinalFantasy.jpg" class="img-fluid rounded mx-auto d-block"  alt="photo de fifa 2022">
-    <div><h1>FINAL FANTASY X | X-2</h1>
-        <p>Final Fantasy X / X-2 HD sur est un remake des épisodes sortis sur PS2. Revivez l'histoire du royaume de Spira et les aventures de Tidus et à travers ces deux volets qui ont marqué la saga Final Fantasy ! La compilation est livrée avec du contenu inédit en Europe : le Creature Create et la Last Mission de Final Fantasy X-2.</p>
-        <p class="prix">Prix : 5 Euros</p>
-        <button type="button" class="btn btn-danger rounded mx-auto d-block">Acheter</button>
-    </div>
+    <h2>Selection du modèle souhaité</h2>
+    <?php
+    $product=["iphone", "Ipad", "iMax"];
+
+
+    ?>
 </div>
 <!--partie screenshot-->
 
