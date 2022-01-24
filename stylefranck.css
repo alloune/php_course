@@ -1,0 +1,101 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #EFE6DD;
+}
+
+/********* NAVBAR *******/
+
+.navbar-brand #logo{
+    width: 50px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.navbar-dark .navbar-brand {
+    color:#EBC036;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+
+/*partie produit*/
+
+.containerproduit h1{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 40px;
+    text-shadow: 1px 1px 5px blue;
+    
+}
+.jeu img{
+    
+    border: 3px solid red;
+    width: 400px;
+    height: 500px;
+
+}
+
+
+.produit h1{
+    margin-top: 20px;
+    
+}
+
+.produit p{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.produit{
+    margin-top: 50px;
+      
+}
+.containerproduit{
+    margin-top: 120px;
+    padding: 20px;
+    
+
+}
+.containerproduit h1{
+    text-align: center;
+}
+.produit img{
+    border: 2px solid black;
+    margin: 0 auto;
+    max-width: 70%;
+    margin-bottom: 20px;
+}
+.prix{
+    text-align: center;
+    font-weight: bold;
+}
+
+.containerproduit .btn{
+    color: #EBC036;
+    background-color: black;
+    border: none;
+}
+
+ @media screen and (min-width: 1080px){
+    .containerproduit{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+     }
+     .containerproduit p{
+         margin: 20px;
+     }
+
+     .prix{
+         margin-left: 100px;
+     }
+     .produit img{
+       display: block;
+       width: 70%;
+       margin-bottom: 20px;
+     }
+
+ }
+    
+

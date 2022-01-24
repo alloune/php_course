@@ -1,0 +1,76 @@
+.site {
+  background-color: #efe6dd;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "roboto", sans-serif;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site_content {
+  flex: 1;
+}
+
+/********* NAVBAR *******/
+
+.navbar-brand #logo {
+  width: 50px;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.navbar-dark .navbar-brand {
+  color: #ebc036;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/********* FOOTER *******/
+
+footer {
+  padding: 5px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #212529;
+  text-align: center;
+}
+
+footer h2 {
+  color: #ebc036;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+footer .reseaux i {
+  font-size: 20px;
+  color: #fff;
+  padding: 15px 5px 15px 5px;
+}
+
+footer .colo {
+  margin-top: 10px;
+}
+
+footer .reseaux a {
+  text-decoration: none;
+}
+
+footer .copyright a {
+  text-decoration: none;
+  color: #fff;
+  padding-left: 5px;
+  font-size: 10px;
+  text-align: center;
+}
+
+/********* MEDIA QUERIES *******/
+
+@media screen and (min-width: 768px) {
+  footer .colo:not(.colo1) {
+    border-right: 2px solid #ebc036;
+  }
+}
