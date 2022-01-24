@@ -77,6 +77,8 @@ body{
     border: none;
 }
 
+
+
  @media screen and (min-width: 1080px){
     .containerproduit{
         display: flex;
@@ -97,5 +99,5 @@ body{
      }
 
  }
-    
+
 
