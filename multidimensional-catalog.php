@@ -35,13 +35,20 @@ include "head.php";
 //print_r($products);
 //echo"</pre>";
 foreach($products as $carac =>$result){
-    
+
+    echo "<br>";
 
     foreach($result as $merc =>$value ){
+        if($merc === "picture_url"){
+            echo "<img class=\"photo_article\" src =".$value.">";
 
-        echo "<br>" . $value;
+        }
+        else {
+            echo "<br>" . $value;
+        }
 
     }
+
 }
         ?>
     </div>
