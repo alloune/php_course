@@ -3,7 +3,7 @@
 include "head.php";
 
 ?>
-    <div style="height: 800px; position: relative; top: 200px">
+    <div style="height: 1000px; position: relative; top: 200px">
         <?php
     $products = [
             "iPhone"=>[
@@ -29,13 +29,11 @@ include "head.php";
                 "picture_url"=>"https://www.apple.com/v/imac-27/c/images/overview/display_retina__b6ivivqnixhy_large.jpg"
             ]
     ];
-
-echo implode ("<br>", $products["iPhone"]);
-echo"<br>----------------------------------------------<br>";
-echo implode ("<br>", $products["iPad"]);
-echo"<br>----------------------------------------------<br>";
-echo implode ("<br>", $products["iMac"]);
-
+echo "<p>Voici le var dump des \$Products</p>";
+var_dump($products);
+echo"<br/><pre>";
+print_r($products);
+echo"</pre>";
         ?>
     </div>
 
