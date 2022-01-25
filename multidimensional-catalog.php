@@ -29,11 +29,20 @@ include "head.php";
                 "picture_url"=>"https://www.apple.com/v/imac-27/c/images/overview/display_retina__b6ivivqnixhy_large.jpg"
             ]
     ];
-echo "<p>Voici le var dump des \$Products</p>";
-var_dump($products);
-echo"<br/><pre>";
-print_r($products);
-echo"</pre>";
+//echo "<p>Voici le var dump des \$Products</p>";
+//var_dump($products);
+//echo"<br/><pre>";
+//print_r($products);
+//echo"</pre>";
+foreach($products as $carac =>$result){
+    
+
+    foreach($result as $merc =>$value ){
+
+        echo "<br>" . $value;
+
+    }
+}
         ?>
     </div>
 
