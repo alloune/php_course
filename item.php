@@ -6,7 +6,7 @@
 
 
     include "head.php";
-
+    include "my-functions.php";
     ?>
 <div class="containerproduit">
     <img src="FinalFantasy.jpg" class="img-fluid rounded mx-auto d-block"  alt="photo de fifa 2022">

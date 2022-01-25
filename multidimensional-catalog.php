@@ -1,6 +1,7 @@
 <?php
 
 include "head.php";
+include "my-functions.php";
 
 ?>
     <div style="height: 1000px; position: relative; top: 200px">

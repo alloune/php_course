@@ -1,6 +1,7 @@
 <?php
 
 include "head.php";
+include "my-functions.php";
 $products = ["iPhone", "iPad", "iMax"];
 
 ?>
