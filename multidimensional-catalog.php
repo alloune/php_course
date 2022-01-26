@@ -36,8 +36,15 @@ include "my-functions.php";
 //print_r($products);
 //echo"</pre>";
 echo "Prix de l'iPhone :".formatPrice($products["iPhone"]["price"]);
+echo "<br>Prix de l'iPhone :".priceExcludingVAT($products["iPhone"]["price"]);
+echo "<br>----------------------------------------------";
 echo "<br>Prix de l'iPad :".formatPrice($products["iPad"]["price"]);
+echo "<br>Prix de l'iPad :".priceExcludingVAT($products["iPad"]["price"]);
+echo "<br>----------------------------------------------";
 echo "<br>Prix de l'iMac :".formatPrice($products["iMac"]["price"]);
+echo "<br>Prix de l'iMac :".priceExcludingVAT($products["iMac"]["price"]);
+echo "<br>----------------------------------------------";
+
 
 
 foreach($products as $carac =>$result){

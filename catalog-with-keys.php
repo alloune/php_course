@@ -29,15 +29,21 @@ include "my-functions.php";
         "picture_url"=>"https://www.apple.com/fr/ipad-10.2/images/overview/hero/hero__bko3fc2it2s2_large.jpg"
     ];
 
-    echo "<br> Prix iPhone : ".formatPrice($iPhone["price"])." €";
-    echo "<br> Prix iPad : ".formatPrice($iPad["price"])." €";
-    echo "<br> Prix iMac : ".formatPrice($iMac["price"])." €<br>";
+    echo "<br> Prix iPhone : ".formatPrice($iPhone["price"]);
+    echo "<br> Prix iPhone <strong>HT</strong> : ".priceExcludingVAT($iPhone["price"]);
+    echo "<br>----------------------------------------------";
+    echo "<br> Prix iPad : ".formatPrice($iPad["price"]);
+    echo "<br> Prix iPad <strong>HT</strong> : ".priceExcludingVAT($iPad["price"]);
+    echo "<br>----------------------------------------------";
+    echo "<br> Prix iMac : ".formatPrice($iMac["price"]);
+    echo "<br> Prix iMac <strong>HT</strong> : ".priceExcludingVAT($iMac["price"]."<br>");
+    echo "<br>----------------------------------------------";
 //print_r($iPhone);
-echo "<br>".implode("<br>", $iPhone);
-echo "<br>--------------------------------------------<br>";
-echo implode("<br>", $iPad);
-echo "<br>--------------------------------------------<br>";
-echo implode("<br>", $iMac);
+//echo "<br>".implode("<br>", $iPhone);
+//echo "<br>--------------------------------------------<br>";
+//echo implode("<br>", $iPad);
+//echo "<br>--------------------------------------------<br>";
+//echo implode("<br>", $iMac);
 ?>
 </div>
 
