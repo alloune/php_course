@@ -31,17 +31,17 @@ include "my-functions.php";
 
     echo "<br> Prix iPhone : ".formatPrice($iPhone["price"]);
     echo "<br> Prix iPhone <strong>HT</strong> : ".priceExcludingVAT($iPhone["price"]);
-    echo "<br>Prix remisé :".displayDiscountedPrice($iPhone["price"],0);
+    echo "<br>".displayDiscountedPrice($iPhone["price"],0);
 
     echo "<br>----------------------------------------------";
     echo "<br> Prix iPad : ".formatPrice($iPad["price"]);
     echo "<br> Prix iPad <strong>HT</strong> : ".priceExcludingVAT($iPad["price"]);
-    echo "<br>Prix remisé :".displayDiscountedPrice($iPad["price"],70);
+    echo "<br>".displayDiscountedPrice($iPad["price"],70);
 
     echo "<br>----------------------------------------------";
     echo "<br> Prix iMac : ".formatPrice($iMac["price"]);
     echo "<br> Prix iMac <strong>HT</strong> : ".priceExcludingVAT($iMac["price"]."<br>");
-    echo "<br>Prix remisé :".displayDiscountedPrice($iMac["price"],27.2);
+    echo "<br>".displayDiscountedPrice($iMac["price"],27.2);
 
     echo "<br>----------------------------------------------";
 //print_r($iPhone);
