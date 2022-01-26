@@ -1,6 +1,7 @@
 <?php
 
 include "head.php";
+include "my-functions.php";
 
 ?>
 <div style="height: 800px; position: relative; top: 200px">
@@ -26,10 +27,13 @@ include "head.php";
         "weight"=> 458,
         "discount"=>10,
         "picture_url"=>"https://www.apple.com/fr/ipad-10.2/images/overview/hero/hero__bko3fc2it2s2_large.jpg"
-];
+    ];
 
-
-echo implode("<br>", $iPhone);
+    echo "<br> Prix iPhone : ".formatPrice($iPhone["price"])." €";
+    echo "<br> Prix iPad : ".formatPrice($iPad["price"])." €";
+    echo "<br> Prix iMac : ".formatPrice($iMac["price"])." €<br>";
+//print_r($iPhone);
+echo "<br>".implode("<br>", $iPhone);
 echo "<br>--------------------------------------------<br>";
 echo implode("<br>", $iPad);
 echo "<br>--------------------------------------------<br>";

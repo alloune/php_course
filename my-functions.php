@@ -2,6 +2,7 @@
 
 function formatPrice($centPrice){
 
-    $euroPrice = 0;
     $euroPrice = $centPrice/100;
+
+    return $euroPrice;
 }
