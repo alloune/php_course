@@ -70,6 +70,7 @@ include "my-functions.php";
             <img src="<?php echo $products['iPhone']['picture_url']?>">
             <p>Iphone Blue Ciel</p>
             <p>Prix : <?echo formatPrice($products['iPhone']['price'])?></p>
+            <input type="button" value="Acheter !">
 
 
         </div>

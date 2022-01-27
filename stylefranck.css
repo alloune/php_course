@@ -138,6 +138,11 @@ text-align: center;
     top: 100px;
     text-align: center;
 }
+.products input{
+    position: relative;
+    top: 100px;
+   
+}
 .products img{
     width: 50px;
     position: relative;
