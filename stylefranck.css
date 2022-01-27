@@ -20,8 +20,10 @@ body{
 
 
 /*partie produit*/
+
  .photo_article{
      width: 100px;
+     height: 150px;
      position: relative;
      left: 500px;
 }
@@ -104,4 +106,45 @@ body{
 
  }
 
+/*---------------- PANIER PHP--------------*/
+
+.products{
+
+    padding-top: 100px;
+    display:flex;
+    height: 500px;
+
+
+
+}
+.iPhone{
+    width: 33%;
+    position: relative;
+}
+.iPad{
+    width: 33%;
+    position: relative;
+
+}
+.iMac{
+    width: 33%;
+    position: relative;
+}
+.products h2{
+text-align: center;
+}
+.products p{
+    position: relative;
+    top: 100px;
+    text-align: center;
+}
+.products img{
+    width: 50px;
+    position: relative;
+    top: 50px;
+    left: 300px;
+
+
+
+}
 
