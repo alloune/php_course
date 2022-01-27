@@ -141,15 +141,17 @@ text-align: center;
 .products input{
     position: relative;
     top: 100px;
-   
+    left: 30git %;
 }
 .products img{
-    width: 50px;
+    width: auto;
+    height: 200px;
     position: relative;
     top: 50px;
-    left: 300px;
-
-
+    left: 40%;
 
 }
+.iMac img{
+    width: auto;
 
+}

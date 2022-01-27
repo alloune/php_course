@@ -70,6 +70,8 @@ include "my-functions.php";
             <img src="<?php echo $products['iPhone']['picture_url']?>">
             <p>Iphone Blue Ciel</p>
             <p>Prix : <?echo formatPrice($products['iPhone']['price'])?></p>
+            <p>Prix : <?echo displayDiscountedPrice($products['iPhone']['price'])?></p>
+            <input type="number" name="nbOfArticle"><br>
             <input type="button" value="Acheter !">
 
 
@@ -77,11 +79,21 @@ include "my-functions.php";
         <div class = "iPad">
             <h2>IPad</h2>
             <img src="<?php echo $products['iPad']['picture_url']?>">
+            <p>Iphone Blue Ciel</p>
+            <p>Prix : <?echo formatPrice($products['iPad']['price'])?></p>
+            <p>Prix : <?echo displayDiscountedPrice($products['iPad']['price'],50)?></p>
+            <input type="number" name="nbOfArticle"><br>
+            <input type="button" value="Acheter !">
 
         </div>
         <div class = "iMac">
             <h2>IMac</h2>
             <img src="<?php echo $products['iMac']['picture_url']?>">
+            <p>Iphone Blue Ciel</p>
+            <p>Prix : <?echo formatPrice($products['iMac']['price'])?></p>
+            <p>Prix : <?echo displayDiscountedPrice($products['iMac']['price'],30)?></p>
+            <input type="number" name="nbOfArticle"><br>
+            <input type="button" value="Acheter !">
         </div>
     </div>
 
