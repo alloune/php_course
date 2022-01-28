@@ -73,9 +73,9 @@ include "my-functions.php";
                 <h2>Iphone</h2>
                 <img src="<?php echo $products['iPhone']['picture_url']?>">
                 <p>Iphone Blue Ciel</p>
-                <p>Prix : <?echo $priceiPhone=formatPrice($products['iPhone']['price'])?></p>
-                <p>Prix : <?echo displayDiscountedPrice($products['iPhone']['price'])?></p>
-                <input type="number" name="nbOfArticle"><br>
+                <p>Prix : <?echo $priceiPhone=formatPrice($products['iPhone']['price'])?> €</p>
+                    <p> non remisé </p>
+                    <input type="number" name="nbOfArticle"><br>
                     <input type="hidden" name="article" value="iPhone">
                     <input type="hidden" name="price" value="<?= $priceiPhone?>">
                 <input type="submit" value="Acheter !">
@@ -87,8 +87,8 @@ include "my-functions.php";
                 <h2>IPad</h2>
                 <img src="<?php echo $products['iPad']['picture_url']?>">
                 <p>Iphone Blue Ciel</p>
-                <p>Prix : <?echo $priceiPad=formatPrice($products['iPad']['price'])?></p>
-                <p>Prix : <?echo displayDiscountedPrice($products['iPad']['price'],50)?></p>
+                    <p><del>Prix : <?echo $priceiPad=formatPrice($products['iPad']['price'])?> €</del></p>
+                <p>Prix : <?echo formatPrice(displayDiscountedPrice($products['iPad']['price'],50))?> €</p>
                 <input type="number" name="nbOfArticle"><br>
                     <input type="hidden" name="article" value="iPad">
                     <input type="hidden" name="price" value="<?= $priceiPad?>">
@@ -100,8 +100,8 @@ include "my-functions.php";
                 <h2>IMac</h2>
                 <img src="<?php echo $products['iMac']['picture_url']?>">
                 <p>Iphone Blue Ciel</p>
-                <p>Prix : <?echo $priceImac = formatPrice($products['iMac']['price'])?></p>
-                <p>Prix : <?echo displayDiscountedPrice($products['iMac']['price'],30)?></p>
+                <p><del>Prix : <?echo $priceImac = formatPrice($products['iMac']['price'])?> €</del></p>
+                <p>Prix : <?echo formatPrice(displayDiscountedPrice($products['iMac']['price'],30))?> €</p>
                 <input type="number" name="nbOfArticle"><br>
                 <input type="hidden" name="article" value="iMac">
                 <input type="hidden" name="price" value="<?= $priceImac?>">
