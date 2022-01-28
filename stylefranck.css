@@ -141,8 +141,9 @@ text-align: center;
 .products input{
     position: relative;
     top: 100px;
-    left: 30git %;
+    left: 35%;
 }
+
 .products img{
     width: auto;
     height: 200px;
@@ -154,4 +155,15 @@ text-align: center;
 .iMac img{
     width: auto;
 
+}
+
+.validation{
+    position: absolute;
+    top: 100px;
+}
+form {
+    width: 100%;
+    display: flex;
+    position: relative;
+    
 }

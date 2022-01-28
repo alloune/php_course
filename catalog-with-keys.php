@@ -40,7 +40,7 @@ include "my-functions.php";
 
     echo "<br>----------------------------------------------";
     echo "<br> Prix iMac : ".formatPrice($iMac["price"]);
-    echo "<br> Prix iMac <strong>HT</strong> : ".priceExcludingVAT($iMac["price"]."<br>");
+    echo "<br> Prix iMac <strong>HT</strong> : ".priceExcludingVAT($iMac["price"]);
     echo "<br>".displayDiscountedPrice($iMac["price"],27.2);
 
     echo "<br>----------------------------------------------";
@@ -50,6 +50,14 @@ include "my-functions.php";
 //echo implode("<br>", $iPad);
 //echo "<br>--------------------------------------------<br>";
 //echo implode("<br>", $iMac);
+
+///***********VALIDATION BOUCLE **********/////
+///
+echo "<br>VALIDATION BOUCLE, Affichage du tableau \$iPhone";
+foreach ($iPhone as $value){
+    echo $value."<br>";
+}
+
 ?>
 </div>
 
