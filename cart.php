@@ -1,7 +1,10 @@
 <?php
 include "head.php";
 include "my-functions.php";
-
+if(empty($_REQUEST["nbOfArticle"])){
+   ?> <div class="products">MERCI DE SÉLECTIONNER UNE QUANTITÉ !</div><?php
+return;
+}
 ?>
 
 <div class="panier">
