@@ -29,7 +29,9 @@
         <div class="col-12 col-md-6">
             <img src="Finalfantasyscreen3.jpg" class="rounded mx-auto d-block" alt="screenshot3">
             <img src="Finalfantasyscreen4.jpg" class="rounded mx-auto d-block" alt="screenshot4">
-        </div>
+        <?php echo $name;?>
+            </div>
+
     </div>
 </div>
 

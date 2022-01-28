@@ -55,7 +55,7 @@ include "my-functions.php";
 ///
 echo "<br>VALIDATION BOUCLE, Affichage du tableau \$iPhone";
 foreach ($iPhone as $value){
-    echo $value."<br>";
+    echo "<br>".$value."<br>";
 }
 
 ?>

@@ -201,7 +201,7 @@ input[type="number"]{
 
 }
 
-.finalProducts, .price{
+.finalProducts, .price, .shipment{
 
     position: relative;
     width: 30%;
@@ -222,7 +222,16 @@ input[type="number"]{
     font-size: 15px;
     border-top: solid black 2px;
 }
+.htPrice{
+    font-size: 12px;
+}
 
 .discount{
     text-align: center;
+}
+.shipment{
+    position: relative;
+
+    top: 50px;
+    width: 350px;
 }

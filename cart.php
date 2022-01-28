@@ -1,7 +1,8 @@
 <?php
 include "head.php";
 include "my-functions.php";
-if(empty($_REQUEST["nbOfArticle"])){
+include "catalog.php";
+if(empty($_REQUEST["nbOfArticle"]) || $_REQUEST["nbOfArticle"]<0){
    ?> <div class="products">MERCI DE SÉLECTIONNER UNE QUANTITÉ !</div><?php
 return;
 }
@@ -38,12 +39,29 @@ return;
         </table>
     </div>
     <div class="price">
+        <div>
         <h3>Prix</h3>
 
         <p><br><br>Pour <?=$_REQUEST["nbOfArticle"] ." " .$_REQUEST["article"] ?> le cout total est de : <?=$total = ($_REQUEST["nbOfArticle"] * $_REQUEST["price"])." €"?> </p>
         <p>Vous bénéficiez exceptionnellement d'une remise de <?= ($remise =25) . "%"; ?></p>
         <p class="finalPrice">Prix après reduction : <?= $totalDiscounted = displayDiscountedPrice(intval($total), $remise)." €";?></p>
         <p class="htPrice">Prix HT : <?= priceExcludingVAT(intval($totalDiscounted)). " €" ?></p>
+        </div>
+        <form method="post" action="cart.php" id="transporterChoice">
+        <div class="shipment">
+
+        <label for="shipment-choice">Choisissez votre transporteur :</label>
+            <select name="transp" id="transpChoice">
+                <option value ="la poste">La Poste</option>
+                <option value="DHL">DHL</option>
+            </select>
+
+        </div>
+        <div class="shipmentCost">
+            <p>Les frais de port sont de : </p>
+
+        </div>
+        </form>
     </div>
 </div>
 </div>
