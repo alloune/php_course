@@ -142,6 +142,7 @@ text-align: center;
     position: relative;
     top: 100px;
     left: 35%;
+
 }
 
 .products img{
@@ -152,6 +153,9 @@ text-align: center;
     left: 40%;
 
 }
+input[type="number"]{
+    width: 80px;
+}
 .iMac img{
     width: auto;
 
@@ -161,9 +165,64 @@ text-align: center;
     position: absolute;
     top: 100px;
 }
-form {
+
+.panier{
+    position: relative;
+    top: 150px;
+    width: 100%;
+    height: 1000px;
+
+}
+.panier table, td, tr, th{
+    border: #212529 3px solid;
+}
+
+
+.panier table{
+    position: relative;
+    width: 500px;
+    height: 70%;
+    top: 15%;
+    left: 5%;
+}
+
+.panier h2{
+    text-align: center;
+}
+.recap{
+    position: relative;
     width: 100%;
     display: flex;
+    flex-direction: row;
+    height: 25%;
+    gap: 250px;
+    left: 15%;
+    top: 10%;
+
+}
+
+.finalProducts, .price{
+
     position: relative;
-    
+    width: 30%;
+    height: auto;
+    border: 2px solid black;
+
+}
+
+.finalProducts{
+   text-align: center;
+}
+.price h3{
+    text-align: center;
+}
+.htPrice, .finalPrice{
+    margin-left: 50%;
+    text-align: right;
+    font-size: 15px;
+    border-top: solid black 2px;
+}
+
+.discount{
+    text-align: center;
 }
