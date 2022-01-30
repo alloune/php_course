@@ -24,3 +24,17 @@ function displayDiscountedPrice($price, $discountPercent = 0){
         return $discountedPrice ;
     }
 }
+function formatWeight($weightToFormat){
+
+    if($weightToFormat >= 1000){
+        $weightToFormat = $weightToFormat /1000 . "kg";
+        return $weightToFormat;
+    }
+    else{
+        return $weightToFormat."g";
+    }
+
+
+
+
+}

@@ -201,7 +201,7 @@ input[type="number"]{
 
 }
 
-.finalProducts, .price, .shipment{
+.finalProducts, .price, .shipment, .shipmentCost{
 
     position: relative;
     width: 30%;
@@ -229,9 +229,21 @@ input[type="number"]{
 .discount{
     text-align: center;
 }
-.shipment{
-    position: relative;
 
+.shipmentCost, .shipment{
+    position: relative;
+    width: 50%;
     top: 50px;
-    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+.shipmentMethod{
+    display: flex;
+    flex-direction: row;
+}
+.shipmentCost input {
+    margin:auto;
+    width: 50%;
 }

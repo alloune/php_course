@@ -11,6 +11,7 @@ include "catalog.php";
             <?php
             global $products;
                 foreach ($products as $key => $value){
+
                    echo
                        "<div class =\"".$key."\">
                             <form method=\"post\" action=\"cart.php\">

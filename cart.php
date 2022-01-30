@@ -2,10 +2,12 @@
 include "head.php";
 include "my-functions.php";
 include "catalog.php";
+global $products;
 if(empty($_REQUEST["nbOfArticle"]) || $_REQUEST["nbOfArticle"]<0){
-   ?> <div class="products">MERCI DE SÉLECTIONNER UNE QUANTITÉ !</div><?php
+   ?> <div class="products">MERCI DE SÉLECTIONNER UNE QUANTITÉ VALIDE !</div><?php
 return;
 }
+
 ?>
 
 <div class="panier">
@@ -19,7 +21,7 @@ return;
         <table>
             <thead>
                 <tr>
-                    <th colspan="3">Récapitulatif des produits selectionnés</th>
+                    <th colspan="3">Récapitulatif des produits sélectionnés</th>
 
                 </tr>
                 <tr>
@@ -32,7 +34,7 @@ return;
             <tr>
                 <td><?=$_REQUEST["article"] ?></td>
                 <td><?=$_REQUEST["nbOfArticle"]?></td>
-                <td><?=$_REQUEST["price"]." €"?></td>
+                <td><?= formatPrice($products[$_REQUEST["article"]]["price"])?></td>
             </tr>
             </tbody>
 
@@ -42,12 +44,12 @@ return;
         <div>
         <h3>Prix</h3>
 
-        <p><br><br>Pour <?=$_REQUEST["nbOfArticle"] ." " .$_REQUEST["article"] ?> le cout total est de : <?=$total = ($_REQUEST["nbOfArticle"] * $_REQUEST["price"])." €"?> </p>
+        <p><br><br>Pour <?=$_REQUEST["nbOfArticle"] ." " .$_REQUEST["article"] ?> le cout total est de : <?=formatPrice($total = ($_REQUEST["nbOfArticle"] * $products[$_REQUEST["article"]]["price"]))?> </p>
         <p>Vous bénéficiez exceptionnellement d'une remise de <?= ($remise =25) . "%"; ?></p>
-        <p class="finalPrice">Prix après reduction : <?= $totalDiscounted = displayDiscountedPrice(intval($total), $remise)." €";?></p>
-        <p class="htPrice">Prix HT : <?= priceExcludingVAT(intval($totalDiscounted)). " €" ?></p>
+        <p class="finalPrice">Prix après reduction : <?= formatPrice($totalDiscounted = displayDiscountedPrice(intval($total), $remise));?></p>
+        <p class="htPrice">Prix HT : <?= formatPrice(priceExcludingVAT(intval($totalDiscounted))) ?></p>
         </div>
-        <form method="post" action="cart.php" id="transporterChoice">
+        <form class ="shipmentMethod" method="post" action="cart.php" id="transporterChoice">
         <div class="shipment">
 
         <label for="shipment-choice">Choisissez votre transporteur :</label>
@@ -58,7 +60,12 @@ return;
 
         </div>
         <div class="shipmentCost">
+
+            <?php $totalWeight = ($products[$_REQUEST["article"]]["weight"] * $_REQUEST["nbOfArticle"])?>
+            <p>Le poids du colis est de : <?= formatWeight($totalWeight)?> </p>
+            <input type="submit" value="Confirmer">
             <p>Les frais de port sont de : </p>
+
 
         </div>
         </form>
