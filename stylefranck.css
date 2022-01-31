@@ -117,19 +117,11 @@ body{
 
 
 }
-.iPhone{
+.iPhone, .iPad, .iMac{
     width: 33%;
     position: relative;
 }
-.iPad{
-    width: 33%;
-    position: relative;
 
-}
-.iMac{
-    width: 33%;
-    position: relative;
-}
 .products h2{
 text-align: center;
 }

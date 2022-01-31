@@ -11,7 +11,6 @@ include "catalog.php";
             <?php
             global $products;
                 foreach ($products as $key => $value){
-
                    echo
                        "<div class =\"".$key."\">
                             <form method=\"post\" action=\"cart.php\">
@@ -22,6 +21,7 @@ include "catalog.php";
                             <p>Prix : ".formatPrice($value["price"])."</p>
                             <input type=\"number\" name=\"nbOfArticle\"><br>
                             <input type=\"hidden\" name=\"article\" value='".$key."'>
+                            <input type='hidden' name='transp' value='la_poste'>
                             <input type='submit' value='Acheter !'>
                             </form>
                             </div>";
