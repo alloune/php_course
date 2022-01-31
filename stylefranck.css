@@ -117,7 +117,7 @@ body{
 
 
 }
-.iPhone, .iPad, .iMac{
+.displayProducts{
     width: 33%;
     position: relative;
 }
@@ -238,4 +238,10 @@ input[type="number"]{
 .shipmentCost input {
     margin:auto;
     width: 50%;
+}
+
+.submit{
+    position: relative;
+    left: 50%;
+    top: 150px;
 }

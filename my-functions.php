@@ -1,40 +1,40 @@
 <?php
 
-function formatPrice($centPrice){
+function formatPrice($centPrice)
+{
 
-    $euroPrice = $centPrice/100;
+    $euroPrice = $centPrice / 100;
 
-    return $euroPrice." €";
+    return $euroPrice . " €";
 }
 
 
-function priceExcludingVAT($TTCPrice){
+function priceExcludingVAT($TTCPrice)
+{
 
 
-    $HTPrice = (100*$TTCPrice)/(100+20);
+    $HTPrice = (100 * $TTCPrice) / (100 + 20);
     return $HTPrice;
 }
 
-function displayDiscountedPrice($price, $discountPercent = 0){
+function displayDiscountedPrice($price, $discountPercent = 0)
+{
 
-    $discountedPrice = $price -($price * ($discountPercent/100));
-    if($discountPercent>0){
-    return $discountedPrice;}
-    else{
-        return $discountedPrice ;
+    $discountedPrice = $price - ($price * ($discountPercent / 100));
+    if ($discountPercent > 0) {
+        return $price;
     }
+    return  $discountedPrice;
 }
-function formatWeight($weightToFormat){
 
-    if($weightToFormat >= 1000){
-        $weightToFormat = $weightToFormat /1000 . "kg";
-        return $weightToFormat;
+function formatWeight($weightToFormat)
+{
+
+    if ($weightToFormat >= 1000) {
+       return $weightToFormat / 1000 . "kg";
+
     }
-    else{
-        return $weightToFormat."g";
-    }
-
-
+    return $weightToFormat . "g";
 
 
 }
