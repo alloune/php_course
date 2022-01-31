@@ -5,31 +5,23 @@ include "head.php";
 include "my-functions.php";
 include "catalog.php";
 global $products;
-foreach ($_REQUEST as $value) {
-
-
-    foreach ($value as $key =>$valid) {
-
-        var_dump($valid);
-        echo "<br>-------------------------------------<br>";
-        var_dump($value);
-        echo "<br>-------------------------------------<br>";
-        var_dump($value[$key]);
-        echo "<br>-------------------------------------<br>";
-
-
-        if ($value[$key]["checkbox"] == "1" && $valid["quantity"] < 0) {
-
-            ?>
-            <div class="products">MERCI DE SÉLECTIONNER UNE QUANTITÉ VALIDE !</div>
-            <?php
-            return;
+foreach ($_POST as $key =>$value) {
+     foreach ($value as $key =>$valid) {
+         var_dump($value[$key]["checkbox"]);
+         var_dump($valid["quantity"]);
+         if (isset($value[$key]["checkbox"]) && $valid["quantity"] < 0) {
+            echo "bravo t'as bien un article avec une quantité valide";
         }
+         else{
+             ?>
+             <div class="products">MERCI DE SÉLECTIONNER UNE QUANTITÉ VALIDE !</div>
+             <?php
+             return;
+         }
     }
 
 }
 
-die;
 
 
 
