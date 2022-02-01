@@ -5,12 +5,9 @@ include "head.php";
 include "my-functions.php";
 include "catalog.php";
 global $products;
-echo "<pre> POST<br>";
-var_dump($_POST);
-echo "</pre>";
-foreach ($_POST as $key => $value) {
+foreach ($_POST['giveInf'] as $key => $value) {
     foreach ($value as $key => $valid) {
-        if (isset($value[$key]["checkbox"]) && $valid["quantity"] <= 0) {
+        if (isset($value[$key]["checkbox"]) && (isset($valid["quantity"])) <= 0) {
             ?>
             <div class="products">MERCI DE SÉLECTIONNER UNE QUANTITÉ VALIDE !</div>
             <?php
@@ -49,41 +46,35 @@ $totalWeight = $totalCost = 0;
                 </thead>
                 <tbody>
                 <form class="shipmentMethod" method="post" action="cart.php">
-                <?php
-
-                foreach ($_POST as $data) {
-
-                    foreach ($data as $key => $value) {
-                        echo "<pre> KEY<br>";
-                        var_dump($key);
+                    <?php
+                    /*    echo "<pre>";
+                        var_dump($_POST['giveInf']);
                         echo "</pre>";
-                        echo "<pre> VALUE<br>";
-                        var_dump($value);
-                        echo "</pre>";
+                        die;*/
+                    foreach ($_POST['giveInf'] as $key => $data) {
 
-                        if(isset($value['checkbox'])){
+                        /*foreach ($data as $key => $value) {*/
 
-                        ?>
-                        <input   type="hidden" name="giveInf[<?=$key?>][checkbox]" value ="1">
-                            <p>CA MARCHE</p>
-                        <?php
-                        }
-                        if ($value['quantity']) {
+                        if (isset($data['checkbox']) && $data['quantity'] > 0) {
+
                             ?>
-                            <input   type="hidden" name="giveInf[<?=$key?>][quantity]">
+                            <input type="hidden" name="giveInf[<?= $key ?>][checkbox]" value="1">
+                            <input type="hidden" name="giveInf[<?= $key ?>][quantity]"
+                                   value="<?= $data['quantity'] ?> ">
                             <tr>
                             <td><?= $key ?></td>
-                            <td><?= $value['quantity'] ?></td>
+                            <td><?= $data['quantity'] ?></td>
                             <td><?= formatPrice($products[$key]["price"]) ?></td>
                             </tr><?php
 
-                            $totalCost = $totalCost + $value['quantity'] * $products[$key]["price"];
-                            $totalWeight = $totalWeight + $value['quantity'] * $products[$key]["weight"];
+                            $totalCost = $totalCost + $data['quantity'] * $products[$key]["price"];
+                            $totalWeight = $totalWeight + $data['quantity'] * $products[$key]["weight"];
                         }
-                    }
 
-                }
-                ?>
+                        /* }*/
+
+                    }
+                    ?>
                 </tbody>
 
             </table>
@@ -99,54 +90,52 @@ $totalWeight = $totalCost = 0;
                 <p class="htPrice">Prix HT : <?= formatPrice(priceExcludingVAT(intval($totalDiscounted))) ?></p>
             </div>
 
-                <div class="shipment">
+            <div class="shipment">
 
-                    <label for="shipment-choice">Choisissez votre transporteur :</label>
-                    <select name="transp">
-                        <option value="la_poste">La Poste</option>
-                        <?php
-                        echo '<option value="DHL"' . ($_REQUEST["transp"] == "DHL" ? "selected" : "") . '>DHL</option>';
-                        ?>
-
-                    </select>
-
-                </div>
-                <div class="shipmentCost">
-
-
-                    <p>Le poids du colis est de : <?= formatWeight($totalWeight) ?> </p>
-                    <input type="submit" value="Confirmer">
-
-                    <input type="hidden" value="<?= $totalWeight ?>" name="weight">
-                    <input type="hidden" value="<?= $_POST["nbOfArticle"] ?>" name="nbOfArticle">
-                    <input type="hidden" value="<?= $_POST["article"] ?>" name="article">
+                <label for="shipment-choice">Choisissez votre transporteur :</label>
+                <select name="transp">
+                    <option value="la_poste">La Poste</option>
                     <?php
-
-                    $shipmentcost = 0;
-                    if ($totalWeight > 2000) {
-                        $shipmentcost = $la_poste["moreThan2"];
-                    } elseif ($totalWeight > 500 && $totalWeight < 2000) {
-                        $shipmentcost = $totalDiscounted * $la_poste["2kg"];
-                    } elseif ($totalWeight < 500) {
-                        $shipmentcost = $shipmentcost + $la_poste["500g"];
-                    }
-
-                    if (isset($_POST["transp"]) && $_POST["transp"] == "DHL") {
-                        if ($totalWeight > 10000) {
-                            $shipmentcost = $DHL["moreThan10"];
-                        } elseif ($totalWeight > 500 && $totalWeight < 10000) {
-                            $shipmentcost = $totalDiscounted * $DHL["5kg"];
-                        } elseif ($totalWeight < 500) {
-                            $shipmentcost = $shipmentcost + $DHL["500g"];
-                        }
-
-                    }
-
+                    echo '<option value="DHL"' . ($_REQUEST["transp"] == "DHL" ? "selected" : "") . '>DHL</option>';
                     ?>
-                    <p>Les frais de port sont de : <?= formatPrice($shipmentcost) ?>  </p>
+
+                </select>
+
+            </div>
+            <div class="shipmentCost">
 
 
-                </div>
+                <p>Le poids du colis est de : <?= formatWeight($totalWeight) ?> </p>
+                <input type="submit" value="Confirmer">
+
+                <input type="hidden" value="<?= $totalWeight ?>" name="weight">
+                <?php
+
+                $shipmentcost = 0;
+                if ($totalWeight > 2000) {
+                    $shipmentcost = $la_poste["moreThan2"];
+                } elseif ($totalWeight > 500 && $totalWeight < 2000) {
+                    $shipmentcost = $totalDiscounted * $la_poste["2kg"];
+                } elseif ($totalWeight < 500) {
+                    $shipmentcost = $shipmentcost + $la_poste["500g"];
+                }
+
+                if (isset($_POST["transp"]) && $_POST["transp"] == "DHL") {
+                    if ($totalWeight > 10000) {
+                        $shipmentcost = $DHL["moreThan10"];
+                    } elseif ($totalWeight > 500 && $totalWeight < 10000) {
+                        $shipmentcost = $totalDiscounted * $DHL["5kg"];
+                    } elseif ($totalWeight < 500) {
+                        $shipmentcost = $shipmentcost + $DHL["500g"];
+                    }
+
+                }
+
+                ?>
+                <p>Les frais de port sont de : <?= formatPrice($shipmentcost) ?>  </p>
+
+
+            </div>
             </form>
         </div>
     </div>
