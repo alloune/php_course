@@ -1,6 +1,8 @@
+<?php session_start();?>
 <div style="margin-top: 200px"></div>
 <?php
 
+var_dump($_SESSION);
 include "head.php";
 include "my-functions.php";
 include "catalog.php";
@@ -18,7 +20,6 @@ foreach ($_POST['giveInf'] as $key => $value) {
 
 }
 
-
 $la_poste = array("500g" => 500, "2kg" => 0.1, "moreThan2" => 0);
 $DHL = array("500g" => 250, "5kg" => 0.15, "moreThan10" => 500);
 $totalWeight = $totalCost = 0;
@@ -28,6 +29,7 @@ $totalWeight = $totalCost = 0;
 
 <div class="panier">
     <h2>PANIER</h2>
+    <h3>Bonjour <?=$_SESSION["name"]?></h3>
     <div class="recap">
         <div class="finalProducts">
 
