@@ -1,9 +1,13 @@
 <div style="margin-top: 200px"></div>
 <?php
+
 include "head.php";
 include "my-functions.php";
 include "catalog.php";
 global $products;
+echo "<pre> POST<br>";
+var_dump($_POST);
+echo "</pre>";
 foreach ($_POST as $key => $value) {
     foreach ($value as $key => $valid) {
         if (isset($value[$key]["checkbox"]) && $valid["quantity"] <= 0) {
@@ -26,7 +30,6 @@ $totalWeight = $totalCost = 0;
 ?>
 
 <div class="panier">
-
     <h2>PANIER</h2>
     <div class="recap">
         <div class="finalProducts">
@@ -45,13 +48,29 @@ $totalWeight = $totalCost = 0;
                 </tr>
                 </thead>
                 <tbody>
-
+                <form class="shipmentMethod" method="post" action="cart.php">
                 <?php
+
                 foreach ($_POST as $data) {
 
                     foreach ($data as $key => $value) {
+                        echo "<pre> KEY<br>";
+                        var_dump($key);
+                        echo "</pre>";
+                        echo "<pre> VALUE<br>";
+                        var_dump($value);
+                        echo "</pre>";
+
+                        if(isset($value['checkbox'])){
+
+                        ?>
+                        <input   type="hidden" name="giveInf[<?=$key?>][checkbox]" value ="1">
+                            <p>CA MARCHE</p>
+                        <?php
+                        }
                         if ($value['quantity']) {
                             ?>
+                            <input   type="hidden" name="giveInf[<?=$key?>][quantity]">
                             <tr>
                             <td><?= $key ?></td>
                             <td><?= $value['quantity'] ?></td>
@@ -79,7 +98,7 @@ $totalWeight = $totalCost = 0;
                     : <?= formatPrice($totalDiscounted = displayDiscountedPrice(intval($totalCost), $remise)); ?></p>
                 <p class="htPrice">Prix HT : <?= formatPrice(priceExcludingVAT(intval($totalDiscounted))) ?></p>
             </div>
-            <form class="shipmentMethod" method="post" action="cart.php">
+
                 <div class="shipment">
 
                     <label for="shipment-choice">Choisissez votre transporteur :</label>
