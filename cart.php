@@ -1,45 +1,28 @@
 <div style="margin-top: 200px"></div>
 <?php
-echo "<pre>";
 include "head.php";
 include "my-functions.php";
 include "catalog.php";
 global $products;
-foreach ($_POST as $key =>$value) {
-     foreach ($value as $key =>$valid) {
-         var_dump($value[$key]["checkbox"]);
-         var_dump($valid["quantity"]);
-         if (isset($value[$key]["checkbox"]) && $valid["quantity"] < 0) {
-            echo "bravo t'as bien un article avec une quantité valide";
+foreach ($_POST as $key => $value) {
+    foreach ($value as $key => $valid) {
+        if (isset($value[$key]["checkbox"]) && $valid["quantity"] <= 0) {
+            ?>
+            <div class="products">MERCI DE SÉLECTIONNER UNE QUANTITÉ VALIDE !</div>
+            <?php
+            return;
         }
-         else{
-             ?>
-             <div class="products">MERCI DE SÉLECTIONNER UNE QUANTITÉ VALIDE !</div>
-             <?php
-             return;
-         }
     }
 
 }
 
 
-
-
 $la_poste = array("500g" => 500, "2kg" => 0.1, "moreThan2" => 0);
 $DHL = array("500g" => 250, "5kg" => 0.15, "moreThan10" => 500);
-//foreach($_REQUEST as $param){
-//    foreach ($param as $key =>$test){
-//        var_dump($key);
-//        echo "<br>-------------------------------------<br>";
-//        var_dump($param[$key]);
-//        echo "<br>-------------------------------------<br>";
-//        var_dump($param[$key]["quantity"]);
-//        echo "<br>-------------------------------------<br>";
-//    }
-//}
-$prices= $products[$_POST["article"]]["price"];
-$weight= $products[$_POST["article"]]["weight"];
-echo "</pre>";
+var_dump($_POST);
+$prices = $products[$_POST["article"]]["price"];
+$weight = $products[$_POST["article"]]["weight"];
+
 ?>
 
 <div class="panier">
