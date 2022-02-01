@@ -6,12 +6,12 @@ include "my-functions.php";
 include "catalog.php";
 global $products;
 foreach ($_POST['giveInf'] as $key => $value) {
-    foreach ($value as $key => $valid) {
-        if (isset($value[$key]["checkbox"]) && (isset($valid["quantity"])) <= 0) {
+    foreach ($value as $test => $valid) {
+        if (isset($_POST["giveInf"][$key]["checkbox"]) && $valid <= 0) {
             ?>
             <div class="products">MERCI DE SÉLECTIONNER UNE QUANTITÉ VALIDE !</div>
             <?php
-            die;
+            return;
         }
 
     }
