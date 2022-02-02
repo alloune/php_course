@@ -12,9 +12,9 @@ include "catalog.php";
 <form method="post" action="cart.php">
     <div class="products">
         <?php
-        echo "<pre>";
-        var_dump($_POST);
-        echo "</pre>";
+//        echo "<pre>";
+//        var_dump($_POST);
+//        echo "</pre>";
         global $products;
         foreach ($products as $key => $value) {
             echo

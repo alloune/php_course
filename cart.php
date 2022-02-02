@@ -1,23 +1,19 @@
-<?php session_start();?>
+<?php session_start(); ?>
 <div style="margin-top: 200px"></div>
 <?php
 
-var_dump($_SESSION);
 include "head.php";
 include "my-functions.php";
 include "catalog.php";
 global $products;
 foreach ($_POST['giveInf'] as $key => $value) {
-    foreach ($value as $test => $valid) {
-        if (isset($_POST["giveInf"][$key]["checkbox"]) && $valid <= 0) {
-            ?>
-            <div class="products">MERCI DE SÉLECTIONNER UNE QUANTITÉ VALIDE !</div>
-            <?php
-            return;
-        }
 
+    if (isset($_POST["giveInf"][$key]["checkbox"]) && $value['quantity'] <= 0 ){
+        ?>
+        <div class="products">MERCI DE SÉLECTIONNER UNE QUANTITÉ VALIDE !</div>
+        <?php
+        return;
     }
-
 }
 
 $la_poste = array("500g" => 500, "2kg" => 0.1, "moreThan2" => 0);
@@ -29,7 +25,7 @@ $totalWeight = $totalCost = 0;
 
 <div class="panier">
     <h2>PANIER</h2>
-    <h3>Bonjour <?=$_SESSION["name"]?></h3>
+    <h3>Bonjour <?= $_SESSION["name"] ?></h3>
     <div class="recap">
         <div class="finalProducts">
 
