@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (isset($_SESSION['name'])) {
+if (!isset($_SESSION['name'])) {
     $_SESSION['name'] = $_POST['name'];
 };
 include "head.php";
@@ -12,9 +12,10 @@ include "catalog.php";
 <form method="post" action="cart.php">
     <div class="products">
         <?php
-//        echo "<pre>";
-//        var_dump($_POST);
-//        echo "</pre>";
+
+        echo "<pre>";
+        var_dump($_SESSION);
+        echo "</pre>";
         global $products;
         foreach ($products as $key => $value) {
             echo

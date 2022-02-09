@@ -245,3 +245,9 @@ input[type="number"]{
     left: 50%;
     top: 150px;
 }
+
+.test{
+    position: relative;
+    top: 200px;
+margin-left: 50%;
+}
