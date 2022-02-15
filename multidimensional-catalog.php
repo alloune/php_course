@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+include "database.php";
+
+
 if (!isset($_SESSION['name'])) {
     $_SESSION['name'] = $_POST['name'];
 };
@@ -13,9 +16,9 @@ include "catalog.php";
     <div class="products">
         <?php
 
-        echo "<pre>";
-        var_dump($_SESSION);
-        echo "</pre>";
+//        echo "<pre>";
+//        var_dump($_SESSION);
+//        echo "</pre>";
         global $products;
         foreach ($products as $key => $value) {
             echo
@@ -34,17 +37,96 @@ include "catalog.php";
     </div>
     <input class="submit" type="submit" value="Valider ma selection">
 </form>
-<form method="post">
-<div class="test">
-    <h2>Test de session</h2>
-    <?php if (isset($_SESSION['name']) && $_SESSION['name'] != "") {
-        echo "Bonjour " . $_SESSION['name'] . ", bievenue sur notre site !";
+<!--<form method="post">-->
+<!--<div class="test">-->
+<!--    <h2>Test de session</h2>-->
+<!--    --><?php //if (isset($_SESSION['name']) && $_SESSION['name'] != "") {
+//        echo "Bonjour " . $_SESSION['name'] . ", bievenue sur notre site !";
+//
+//    } ?>
+<!--    <p>Quel est votre nom ?</p>-->
+<!--    <input type="text" name="name">-->
+<!--    <input type="submit">-->
+<!--</form>-->
+<!---->
+<!--</div>-->
+<div class="productsList">
+    <?php
 
-    } ?>
-    <p>Quel est votre nom ?</p>
-    <input type="text" name="name">
-    <input type="submit">
-</form>
+    foreach($productsList as $product){
+
+        echo "<br>" . $product['name'] ;
+
+    }
+
+    ?>
 </div>
+<div class="custList">
+    <?php
+
+    foreach($custList as $cust){
+
+     echo "<br>" . $cust['first_name']. " , " . $cust['last_name'] ;
+
+    }
+
+    ?>
+</div>
+<div class="custList">
+    <?php
+
+    foreach($ordersCost as $cost){
+
+     echo "<br> Commande numéro : " . $cost['number']. "<br> Cout total :  " . $cost['Total_Price'] . " €";
+
+    }
+
+
+    ?>
+</div>
+<div class="100n500List">
+    <?php
+
+    foreach($finalSort as $unit){
+
+        echo "<br> Commande numéro : " . $unit['number']. "<br> Cout total :  " . $unit['Total'] . " €";
+
+
+
+    }
+
+//    echo "<pre>";
+//    var_dump($unit);
+//    echo "</pre>";
+    ?>
+</div>
+<div class = addProduct>
+    <form>
+        <input type="text" name="name" placeholder="nom du produit">
+        <input type="text" name="price" placeholder="prix du produit">
+        <input type="text" name="weight" placeholder="poids unitaire">
+        <input type="radio" id="oui" value ="oui">
+        <label for="oui">Oui</label>
+        <input type="radio" id="non" value ="non">
+        <label for="non">Non</label>
+        <input type="text" name="description" placeholder="description">
+        <input type="text" name="img" placeholder="Lien de l'image">
+        <input type="number" name="quantity" placeholder="Quantité disponible">
+        <input type="submit" value="Ajouter mon produit">
+        <?php
+        $insertProducts = $mysqlConnection->prepare('INSERT INTO products(name, price, weight, avaible, description,quantity,image');
+        ?>
+
+
+
+    </form>
+
+
+
+
+
+
+</div>
+
 
 
