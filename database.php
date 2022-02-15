@@ -40,3 +40,7 @@ WHERE Total BETWEEN 100 AND 500
 GROUP BY number');
 $finalSort = $costbt100n500 ->fetchAll();
 
+
+
+
+

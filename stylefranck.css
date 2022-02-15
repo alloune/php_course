@@ -251,3 +251,40 @@ input[type="number"]{
     top: 200px;
 margin-left: 50%;
 }
+form{
+    height: 100%;
+}
+
+.productsLine{
+    border: solid black 2px;
+    list-style: none;
+
+
+}
+.productsList ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+
+
+}
+.productsList ul li{
+height: 200px;
+width: 300px;
+   text-align: center;
+
+}
+.productsList ul li img{
+
+  width: 100px;
+    height: auto;
+
+}
+
+
+.cleanLine{
+    position: relative;
+    width: 100%;
+
+}

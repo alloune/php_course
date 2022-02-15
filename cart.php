@@ -1,20 +1,42 @@
 <?php session_start(); ?>
+
 <div style="margin-top: 200px"></div>
 <?php
-
 include "head.php";
 include "my-functions.php";
 include "catalog.php";
 global $products;
+global $isChecked;
+$isChecked = 0;
 foreach ($_POST['giveInf'] as $key => $value) {
+
 
     if (isset($_POST["giveInf"][$key]["checkbox"]) && $value['quantity'] <= 0 ){
         ?>
         <div class="products">MERCI DE SÉLECTIONNER UNE QUANTITÉ VALIDE !</div>
         <?php
-        return;
+        die;
+    }
+    if(!isset($_POST["giveInf"][$key]["checkbox"]) && empty($value['quantity'])){
+        $isChecked+=1;
+
+    }
+    if(strpos($_POST['giveInf'][$key]['quantity'], "." )){
+        echo "Merci d'entrer un entier";
+        die;
+
+    }
+    if(isset($_POST["giveInf"][$key]["checkbox"]) && isset($value['quantity']) && !is_numeric($value['quantity'])){
+       echo "Merci de pas changer le code petit malin";
+       die;
     }
 }
+if($isChecked ==3){
+    echo "pas bon";
+    die;
+}
+
+
 
 $la_poste = array("500g" => 500, "2kg" => 0.1, "moreThan2" => 0);
 $DHL = array("500g" => 250, "5kg" => 0.15, "moreThan10" => 500);

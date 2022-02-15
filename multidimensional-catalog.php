@@ -16,9 +16,9 @@ include "catalog.php";
     <div class="products">
         <?php
 
-//        echo "<pre>";
-//        var_dump($_SESSION);
-//        echo "</pre>";
+        //        echo "<pre>";
+        //        var_dump($_SESSION);
+        //        echo "</pre>";
         global $products;
         foreach ($products as $key => $value) {
             echo
@@ -51,11 +51,29 @@ include "catalog.php";
 <!---->
 <!--</div>-->
 <div class="productsList">
+    <ul>
     <?php
 
-    foreach($productsList as $product){
+    foreach ($productsList as $product) {
+            ?>
+            <li class=productsLine>
+                <img class="productimg" src="<?=$product['image']?>" alt="Image de : <?= $product['name']?>"
+                <h2><?= $product['name'] ?></h2>
+            </li>
+            <?php
 
-        echo "<br>" . $product['name'] ;
+
+    }
+
+    ?>
+    </ul>
+</div>
+<div class="custList">
+    <?php
+
+    foreach ($custList as $cust) {
+
+        echo "<br>" . $cust['first_name'] . " , " . $cust['last_name'];
 
     }
 
@@ -64,20 +82,9 @@ include "catalog.php";
 <div class="custList">
     <?php
 
-    foreach($custList as $cust){
+    foreach ($ordersCost as $cost) {
 
-     echo "<br>" . $cust['first_name']. " , " . $cust['last_name'] ;
-
-    }
-
-    ?>
-</div>
-<div class="custList">
-    <?php
-
-    foreach($ordersCost as $cost){
-
-     echo "<br> Commande numéro : " . $cost['number']. "<br> Cout total :  " . $cost['Total_Price'] . " €";
+        echo "<br> Commande numéro : " . $cost['number'] . "<br> Cout total :  " . $cost['Total_Price'] . " €";
 
     }
 
@@ -87,43 +94,34 @@ include "catalog.php";
 <div class="100n500List">
     <?php
 
-    foreach($finalSort as $unit){
+    foreach ($finalSort as $unit) {
 
-        echo "<br> Commande numéro : " . $unit['number']. "<br> Cout total :  " . $unit['Total'] . " €";
-
+        echo "<br> Commande numéro : " . $unit['number'] . "<br> Cout total :  " . $unit['Total'] . " €";
 
 
     }
 
-//    echo "<pre>";
-//    var_dump($unit);
-//    echo "</pre>";
+    //    echo "<pre>";
+    //    var_dump($unit);
+    //    echo "</pre>";
     ?>
 </div>
-<div class = addProduct>
-    <form>
+<div class=addProduct>
+    <form method="post" action="insert.php">
         <input type="text" name="name" placeholder="nom du produit">
         <input type="text" name="price" placeholder="prix du produit">
         <input type="text" name="weight" placeholder="poids unitaire">
-        <input type="radio" id="oui" value ="oui">
+        <input type="radio" name="avaible" id="oui" value="1">
         <label for="oui">Oui</label>
-        <input type="radio" id="non" value ="non">
+        <input type="radio" name="avaible" id="non" value="0">
         <label for="non">Non</label>
         <input type="text" name="description" placeholder="description">
-        <input type="text" name="img" placeholder="Lien de l'image">
+        <input type="text" name="image" placeholder="Lien de l'image">
         <input type="number" name="quantity" placeholder="Quantité disponible">
         <input type="submit" value="Ajouter mon produit">
-        <?php
-        $insertProducts = $mysqlConnection->prepare('INSERT INTO products(name, price, weight, avaible, description,quantity,image');
-        ?>
-
 
 
     </form>
-
-
-
-
 
 
 </div>
