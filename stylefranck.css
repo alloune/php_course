@@ -205,9 +205,8 @@ input[type="number"]{
 .finalProducts{
    text-align: center;
 }
-.price h3{
-    text-align: center;
-}
+
+
 .htPrice, .finalPrice{
     margin-left: 50%;
     text-align: right;
@@ -261,7 +260,13 @@ form{
 
 
 }
+.productsList{
+    margin-top: 200px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
 .productsList ul{
+    position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -270,15 +275,20 @@ form{
 
 }
 .productsList ul li{
+
 height: 200px;
 width: 300px;
-   text-align: center;
+text-align: center;
+
 
 }
 .productsList ul li img{
 
   width: 100px;
     height: auto;
+    position: absolute;
+    top:0;
+    left: 33%;
 
 }
 
@@ -287,4 +297,48 @@ width: 300px;
     position: relative;
     width: 100%;
 
+}
+
+.addProduct{
+    margin-left: 15%;
+
+}
+.deletebtn{
+
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+
+
+}
+
+.productsLine h3{
+    font-size: 0.75rem;
+    position: absolute;
+    top: 55%;
+    left: 45%;
+}
+.productsLine h2{
+    font-size: 0.75rem;
+    position: absolute;
+    top: 75%;
+    left: 45%;
+}
+form{
+    position: relative;
+}
+.cart{
+    position: fixed;
+    top: 100px;
+    right: 0px;
+}
+.quantProd{
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+}
+.purchaseBtn{
+    position: absolute;
+    bottom: 0;
+    left:45%;
 }
