@@ -41,6 +41,7 @@ GROUP BY number');
 $finalSort = $costbt100n500 ->fetchAll();
 
 
+$update = $mysqlConnection->query("UPDATE products SET price = 2500, avaible = 1 WHERE price = 3"  );
 
 
 

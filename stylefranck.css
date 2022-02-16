@@ -364,3 +364,14 @@ form{
 .cartList form{
     height: auto;
 }
+
+.addProduct{
+
+    margin-top: 100px;
+}
+
+.addProduct h1{
+
+    text-align: center;
+
+}

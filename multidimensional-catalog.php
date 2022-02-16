@@ -49,6 +49,7 @@ include "catalog.php";
     </ul>
 </div>
 <div class=addProduct>
+    <h1>AJOUT D'UN NOUVEAU PRODUIT</h1>
     <form method="post" action="insert.php">
         <input type="text" name="name" placeholder="nom du produit">
         <input type="text" name="price" placeholder="prix du produit">
