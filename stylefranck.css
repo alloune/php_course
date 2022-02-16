@@ -342,3 +342,25 @@ form{
     bottom: 0;
     left:45%;
 }
+.finalCart{
+    margin-left:50px;
+    width: 600px;
+}
+
+.finalCart, .resume, .total{
+    border: solid black 2px;
+}
+
+.cartList {
+    list-style: none;
+}
+.cartList img{
+   width: 40px;
+}
+.cartList li{
+    border: 2px black solid;
+   margin:  20px;
+}
+.cartList form{
+    height: auto;
+}

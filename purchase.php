@@ -32,7 +32,7 @@ $total_order=0;
 
     if (count($_POST) != 0) {
         if ($_POST['quantity'] != 0) {
-            echo "on a bien un post valide";
+            echo "Articles ajoutés au panier :)";
             $mysqlConnection->query(
                 "INSERT INTO order_product(quantity, product_id, order_id) 
                           VALUE ('$_POST[quantity]','$_POST[product_id]', '$_POST[order_id]')

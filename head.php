@@ -24,7 +24,7 @@
 
     <div class="container-fluid">
 
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="purchase.php">
         <img id="logo" src="hitman.png" alt="Logo">Games Bond</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,46 +34,14 @@
     <ul class="navbar-nav">
 
         <li class="nav-item">
-        <a class="nav-link active" href="index.html">Accueil</a>
+        <a class="nav-link active" href="purchase.php">Accueil</a>
         </li>
-
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="Catalogue.html" id="navbarDropdownjeux" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Nos jeux</a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownjeux">
-                <li><a class="dropdown-item" href="Catalogue.html">Tout</a></li>
-                <li><a class="dropdown-item" href="Catalogue_Action.html">Action</a></li>
-                <li><a class="dropdown-item" href="Catalogue_Sport.html">Sport</a></li>
-                <li><a class="dropdown-item" href="Catalogue_Strategie.html">Stratégie</a></li>
-                <li><a class="dropdown-item" href="Catalogue_RPG.html">RPG</a></li>
-            </ul>
-            </li>
-
         <li class="nav-item">
-        <a class="nav-link" href="#">Mon compte</a>
+            <a class="nav-link" href="cart.php">Mon panier</a>
         </li>
-
         <li class="nav-item">
-            <a class="nav-link" href="#">Mon panier</a>
-            </li>
-
-
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownequipe" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    A propos</a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownequipe">
-                <li><a class="dropdown-item" href="equipe.html">Equipe</a></li>
-                <li><a class="dropdown-item" href="CV_Allan.html">Allan</a></li>
-                <li><a class="dropdown-item" href="CV_Dayane.html">Dayane</a></li>
-                <li><a class="dropdown-item" href="CV_Estelle.html">Estelle</a></li>
-                <li><a class="dropdown-item" href="CV_Franck.html">Franck</a></li>
-            </ul>
-            </li>
-
-        <li class="nav-item">
-        <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link active" href="multidimensional-catalog.php">Gestion des articles</a>
         </li>
-
     </ul>
     </div>
     </div>
