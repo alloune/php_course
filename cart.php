@@ -8,11 +8,9 @@ include "my-functions.php";
 include "catalog.php";
 include "database.php";
 $total = 0;
-//echo "<pre>";
-//var_dump($_POST);
-//echo "</pre>";
+
 //echo count($_POST);
-if (count($_POST) > 0) {
+if (count($_POST) > 0 && isset($_POST['product_id'])) {
 
     $deleteProduct = $mysqlConnection->query("DELETE FROM order_product WHERE product_id = $_POST[product_id] AND order_id = $_POST[order_id]");
 
@@ -64,9 +62,46 @@ GROUP BY name;
             }
             ?>
         </ul>
-    </div>
-    <div class="total">
-        <h2>Total : <?= $total ?> €</h2>
+        <div class="total">
+            <h2>Total : <?= $total ?> €</h2>
 
+        </div>
+    </div>
+
+    <div class="carrier">
+        <?php
+        //Connexion -> get total weight
+//        SELECT SUM(order_product.quantity * weight) AS total_weight
+//FROM order_product
+//JOIN products ON products.id = product_id
+//WHERE order_id = 8; <-- la on va plutot donnéer l'id de l'order en cours du customer une fois mise en place
+
+$weightCalc = $mysqlConnection->query("SELECT SUM(order_product.quantity * weight) AS total_weight
+FROM order_product
+JOIN products ON products.id = product_id
+WHERE order_id = 8");
+$totalWeight = $weightCalc->fetchAll();
+//echo "<pre>";
+//var_dump($totalWeight);
+//echo "</pre>";
+
+
+
+        ?>
+        <h2>Commande</h2>
+        <p>Poids total : <?= formatWeight($totalWeight[0]["total_weight"]) ?></p>
+        <form method="post" action="cart.php">
+        <label for="carrier-select">Selectionner un transporteur :</label>
+        <select name="carrier">
+            <option value=""></option>
+            <option value="la_poste">La Poste</option>
+            <option value="dhl">DHL</option>
+            <option value="colissimo">Colissimo</option>
+            <option value="fedex">FedEx</option>
+
+        </select>
+        <input type="submit" value="Valider">
+        </form>
+        <p>Prix FPI</p>
     </div>
 </div>

@@ -343,11 +343,16 @@ form{
     left:45%;
 }
 .finalCart{
-    margin-left:50px;
-    width: 600px;
+    margin-left:10%;
+   margin-right: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
 }
 
-.finalCart, .resume, .total{
+.finalCart, .resume, .total, .carrier{
     border: solid black 2px;
 }
 
@@ -373,5 +378,20 @@ form{
 .addProduct h1{
 
     text-align: center;
+
+}
+
+.resume, .carrier{
+
+    margin: 50px;
+
+}
+.carrier{
+    width: 50%;
+
+}
+.resume{
+
+    width: 30%;
 
 }
