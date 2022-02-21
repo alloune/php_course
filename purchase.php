@@ -29,7 +29,7 @@ $total_order=0;
 //    echo "</pre>";
 
 
-
+var_dump($_POST);
     if (count($_POST) != 0) {
         if ($_POST['quantity'] != 0) {
             echo "Articles ajoutés au panier :)";
