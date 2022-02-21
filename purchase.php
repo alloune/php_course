@@ -7,6 +7,7 @@ include "my-functions.php";
 include "catalog.php";
 $listOfThings = getAllProduct();
 
+
 class Item
 {
     public string $name;
@@ -19,48 +20,42 @@ class Item
     public int $quantity;
     public int $category;
 
-    public function displayItem()
-    {
-
-        ?>
-        <div>
-            <p><?= $this->name ?></p>
-            <p><?= $this->price ?></p>
-            <img src="<?= $this->imageURL ?>">
-
-        </div>
-        <?php
-
-    }
-
 }
-?>
-<div style="margin-top: 200px;">
 
-</div>
+
+
+//var_dump($listOfThings);
+
+function displayItem(Item $product)
+{
+
+    ?>
+    <div class="productsList">
+        <p><?= $product->name ?></p>
+        <p><?= $product->price ."€" ?></p>
+        <img src="<?= $product->imageURL ?>">
+
+    </div>
 <?php
-$test = new Item();
-$test->name="pomme";
-$test->price=12;
-$test->displayItem();
-var_dump($test);
-var_dump($listOfThings);
-class Catalogue{
-
-    public array $answerRQST;
-
-    public function __construct(){
-
-
-
-    }
-
 
 }
 
-$catalogue = new Catalogue();
-$catalogue->answerRQST = $listOfThings;
+?>
+<div>
 
-var_dump($catalogue);
+
+    <?php
+
+    foreach ($listOfThings as $product){
+        $test = new Item();
+        $test->name=$product["name"];
+        $test->price=$product["price"];
+        $test->imageURL=$product["image"];
+        displayItem($test);
+    }
+
+
+    ?>
+</div>
 
 
