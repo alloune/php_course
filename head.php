@@ -24,7 +24,7 @@
 
     <div class="container-fluid">
 
-        <a class="navbar-brand" href="purchase.php">
+        <a class="navbar-brand" href="client.php">
         <img id="logo" src="hitman.png" alt="Logo">Games Bond</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

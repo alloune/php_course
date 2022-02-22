@@ -8,16 +8,6 @@ include "catalog.php";
 include "class.php";
 
 ?>
-<div class="test">
 
-    <ul class="pooList">
-        <?php
-        $catalogue = new Catalogue($mysqlConnection);
-        echo displayCataloque($catalogue);
-
-
-        ?>
-    </ul>
-</div>
 
 

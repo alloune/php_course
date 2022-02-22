@@ -247,12 +247,19 @@ input[type="number"]{
  .pooList{
      display: flex;
      flex-wrap: wrap;
-
-
+     margin-left: 10%;
+     margin-right: 10%;
+     border: solid black 2px;
+     gap: 50px;
  }
 
- .pooList li form img{
-     width: 100px;
+ .pooList img{
+     width: 150px;
+ }
+ .pooList form{
+
+     margin-left: 50%;
+
  }
 
 

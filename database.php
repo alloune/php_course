@@ -1,9 +1,13 @@
 <?php
 try {
-     $mysqlConnection = new PDO(
-        'mysql:host=localhost;dbname=sellsdb;charset=utf8',
-        'allan',
-        'Chacha38'
+//     $mysqlConnection = new PDO(
+//        'mysql:host=localhost;dbname=sellsdb;charset=utf8',
+//        'allan',
+//        'Chacha38'
+           $mysqlConnection = new PDO(
+               'mysql:host=localhost;dbname=sellsdb;charset=utf8',
+               'allan',
+               ''
     );
 } catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
